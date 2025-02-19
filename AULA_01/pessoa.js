@@ -20,13 +20,16 @@ function consultaTodasAsPessoas(){
 }
 
 function deletaPessoa(id){
-    var index = pessoas.findIndex(pessoa => pessoa.id == id);
-    if(index != -1){
-        pessoas.splice(index,1);
-        return true;
+    //Pesquisar qual a posição do item no Arraylist
+    for (let i = 0; i < pessoas.length; i++) {
+        if(pessoas[i].id == id){
+            console.log(pessoas[i]);
+            pessoas.splice(i, 1); //Deleta o item do Arraylist
+        }
     }
-    return false;
-}
+
+   
+};
 
 module.exports = {
     cadastraPessoa,
